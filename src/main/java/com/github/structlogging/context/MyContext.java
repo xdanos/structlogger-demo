@@ -26,14 +26,11 @@
  * of the authors and should not be interpreted as representing official policies,
  * either expressed or implied, of the FreeBSD Project.
  */
-package com.github.structlogging;
+package com.github.structlogging.context;
 
+import com.github.structlogging.VariableContext;
 import com.github.structlogging.annotation.VarContextProvider;
-import com.github.structlogging.annotation.Var;
 
 @VarContextProvider
-public interface AuditContext extends VariableContext {
-
-    @Var
-    AuditContext id(long id);
+public interface MyContext extends VariableContext {
 }

@@ -26,33 +26,15 @@
  * of the authors and should not be interpreted as representing official policies,
  * either expressed or implied, of the FreeBSD Project.
  */
-package com.github.structlogging;
+package com.github.structlogging.context;
 
-import com.github.structlogging.annotation.Var;
+import com.github.structlogging.VariableContext;
 import com.github.structlogging.annotation.VarContextProvider;
+import com.github.structlogging.annotation.Var;
 
 @VarContextProvider
-public interface BlockCacheContext extends VariableContext {
+public interface AuditContext extends VariableContext {
 
     @Var
-    BlockCacheContext blockId(long blockId);
-
-    @Var
-    BlockCacheContext dataNodeUuid(long dataNodeUuid);
-
-    @Var
-    BlockCacheContext numCached(int numCached);
-
-    @Var
-    BlockCacheContext neededCached(int neededCached);
-
-    @Var
-    BlockCacheContext reason(String reason);
-
-    @Var
-    BlockCacheContext context(int context);
-
-    @Var
-    BlockCacheContext object(Test test);
-
+    AuditContext id(long id);
 }

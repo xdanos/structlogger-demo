@@ -26,8 +26,9 @@
  * of the authors and should not be interpreted as representing official policies,
  * either expressed or implied, of the FreeBSD Project.
  */
-package com.github.structlogging;
+package com.github.structlogging.context;
 
+import com.github.structlogging.VariableContext;
 import com.github.structlogging.annotation.Var;
 import com.github.structlogging.annotation.VarContextProvider;
 

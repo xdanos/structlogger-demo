@@ -28,11 +28,14 @@
  */
 package com.github.structlogging;
 
+import com.github.structlogging.context.AnotherContext;
+import com.github.structlogging.context.BlockCacheContext;
 import com.github.structlogging.slf4j.Slf4jLoggingCallback;
 import com.github.structlogging.annotation.LoggerContext;
 import org.slf4j.LoggerFactory;
 
-public class Example {
+@SuppressWarnings("ConstantConditions")
+public class BasicExample {
 
     @LoggerContext(context = DefaultContext.class)
     private static StructLogger<DefaultContext> defaultLog = new StructLogger<>(
@@ -126,20 +129,11 @@ public class Example {
                 .dataNodeUuid(someMethod())
                 .log();
 
-        structLog.info("Event with object")
-                .object(new Test("ahoj"))
-                .log();
-
         structLog.audit("Audit event with blockId and dataNodeUuid")
                 .blockId(1)
                 .dataNodeUuid(2)
                 .log();
-
-        defaultLog.info("Event with default object={} and exception={}")
-                .varObject(new Test("cau"))
-                .varException(new Exception())
-                .log();
-    }
+     }
 
     private static int someMethod() {
         return 0;
