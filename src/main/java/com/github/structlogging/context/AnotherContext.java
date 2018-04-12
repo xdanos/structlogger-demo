@@ -7,7 +7,7 @@ import com.github.structlogging.annotation.VarContextProvider;
 @VarContextProvider
 public interface AnotherContext extends VariableContext {
 
-    @Var
-    AnotherContext context(String context);
+	@Var
+	AnotherContext context(String context);
 
 }
